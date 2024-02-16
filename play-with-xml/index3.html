@@ -1,0 +1,67 @@
+<!--this is for displaying line by line separately-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display XML in <p> Tag</title>
+</head>
+<body>
+
+    <div id="xmlContent"></div>
+
+    <script>
+        // Function to fetch and display XML content
+        function displayXML() {
+            // Path to your XML file
+            var xmlFilePath = 'file.xml';
+
+            // Creating a new XMLHttpRequest object
+            var xmlhttp = new XMLHttpRequest();
+
+            // Define what happens on successful data submission
+            xmlhttp.onload = function () {
+                if (xmlhttp.status === 200) {
+                    // Use DOMParser to parse the XML content
+                    var parser = new DOMParser();
+                    var xmlDoc = parser.parseFromString(xmlhttp.responseText, 'application/xml');
+
+                    // Check if parsing was successful
+                    if (xmlDoc.getElementsByTagName('parsererror').length > 0) {
+                        console.error('Error parsing XML content:', xmlDoc.getElementsByTagName('parsererror')[0].textContent);
+                    } else {
+                        // Access the content of the XML file
+                        var lines = xmlDoc.documentElement.textContent.split('\n');
+
+                        // Display each line separately
+                        var xmlContentDiv = document.getElementById('xmlContent');
+                        lines.forEach(function(line) {
+                            var pTag = document.createElement('p');
+                            pTag.innerText = line;
+                            xmlContentDiv.appendChild(pTag);
+                        });
+                    }
+                } else {
+                    console.error('Error loading XML file. HTTP status:', xmlhttp.status);
+                }
+            };
+
+            // Define what happens in case of an error
+            xmlhttp.onerror = function () {
+                console.error('Error fetching the XML file.');
+            };
+
+            // Open a new connection to the specified XML file
+            xmlhttp.open('GET', xmlFilePath, true);
+
+            // Send the request
+            xmlhttp.send();
+        }
+
+        // Automatically call the function when the page loads
+        window.onload = displayXML;
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<p id="xmlContent"></p>
+	<script> 
+		function displayXML() {
+// Function to fetch and display XML content
+			var xmlFilePath = 'file.xml';
+
+			// Creating a new XMLHttpRequest object
+			var xmlhttp = new XMLHttpRequest();
+
+			// Define what happens on successful data submission
+			xmlhttp.onload = function () {
+				if (xmlhttp.status === 200) {
+					// Parse the XML response
+					var xmlDoc = xmlhttp.responseXML;
+					if (xmlDoc) {
+					// Access the content of the XML file
+					var xmlContent = new XMLSerializer().serializeToString(xmlDoc);
+
+					// Display the content in the <p> tag
+					document.getElementById('xmlContent').innerText = xmlContent;
+				} else {
+					console.error('Error parsing XML content');
+				}
+			} else {
+				console.error('Error loading XML file. HTTP STATUS:', xmlhttp.status);
+			}
+			};
+
+			// Define what happens in case of an error
+			xmlhttp.onerror = function () {
+				console.error('Error fetching the XML file.');
+			};
+
+			// Open a new connection to the specified XML file
+			xmlhttp.open( 'GET', xmlFilePath, true);
+
+			// Send the request
+			xmlhttp.send();
+
+		}
+		// Automatically call the function when the page loads
+		window.onload = displayXML;
+	</script>
+</body>
+</html>
