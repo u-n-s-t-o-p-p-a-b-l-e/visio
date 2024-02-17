@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<button type="button" onclick="loadXMLDoc()">loop the list</button>
+
+	<p id="demo"></p>
+
+	<script>
+		function loadXMLDoc() {
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					myFunction(this);
+				}
+			};
+			xmlhttp.open("GET", "file.xml", true);
+			xmlhttp.send();
+		}
+
+		function myFunction(xml) {
+			var x, i, xmlDoc, txt;
+			xmlDoc = xml.responseXML;
+			console.log(xmlDoc); // Log to the console for debugging
+			txt = "";
+			x = xmlDoc.getElementsByTagName("data");
+
+			console.log(x); // Log the results of getElementsByTagName for debugging
+			for (i = 0; i < x.length; i++) {
+				txt += x[i].childNodes[0].nodeValue + "<br>";
+
+
+			}
+			 console.log(txt); // Log the final text content for debugging
+
+			document.getElementById("demo").innerHTML = txt;
+		}
+	</script>
+</body>
+</html>

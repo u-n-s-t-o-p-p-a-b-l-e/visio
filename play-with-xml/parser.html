@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<p id="demo"></p>
+
+		<script>
+			var text, parser, xmlDoc;
+
+			text = "<bookstore><book>" +
+                   "<title>Everyday is Payday</title>" +
+				   "<year>2005</year>" +
+				   "</book></bookstore>" ;
+
+			parser = new DOMParser();
+			xmlDoc = parser.parseFromString(text, "text/xml");
+                <!-- change title with other like year -->
+			document.getElementById("demo").innerHTML =
+				xmlDoc.getElementsByTagName("title","year")[0].childNodes[0].nodeValue;
+		</script>
+	</body>
+</html>
