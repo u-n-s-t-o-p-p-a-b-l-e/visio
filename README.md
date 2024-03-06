@@ -1,6 +1,6 @@
 
 # Image effect with CSS text
-
+![](https://github.com/u-n-s-t-o-p-p-a-b-l-e/Tamar/blob/main/img/css-text-effect.png)
 <br />
 
 This CSS project includes:
@@ -25,12 +25,15 @@ Install it globally '(-g)' using npm
 ```
 npm install -g http-server
 ```
+<br />
 Then run it within your terminal, in your project root folder (that contain an index.html file):
 ```
 http-server
 ```
 It will give the URL on localhost.
-To open the browser automatically, add -o . In order to clear the cache for smoother result, add -c-1.
+To open the browser automatically, add `-o` . 
+<br />
+In order to clear the cache for smoother result, add `-c-1`.
 
 ```
 http-server -o -c-1
