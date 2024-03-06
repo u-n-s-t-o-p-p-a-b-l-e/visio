@@ -26,8 +26,8 @@ Install it globally '(-g)' using npm
 npm install -g http-server
 ```
 <br />
-Then run it within your terminal, in your project root folder (that contain an index.html file):
-```
+Then run it within your terminal, in your project root folder ( that contain an index.html file ):
+```bash
 http-server
 ```
 It will give the URL on localhost.
