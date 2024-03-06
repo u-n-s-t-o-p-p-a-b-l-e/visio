@@ -17,15 +17,24 @@ body {
 	background: var(--color-background);
 }
 
+canvas {
+	border: 1px solid red;
+}
+
+.pad {
+	position: relative;
+	margin: 4rem;
+}
+
 p {
 	font-size: 8px;
 	line-height: 8px;
 	text-align: justify;
-	-webkit-background-size: cover;
-    background-size: cover;
+	/* -webkit-background-size: cover; */
+    /* background-size: cover; */
 	background-repeat: no-repeat;
 	background-position: center;
-	background: url(tamar.jpeg) no-repeat center/cover;
+	background: url(../img/mrrobot.jpg) no-repeat center/contain;
 	background-attachment: fixed;
 	-webkit-background-clip: text;
 	background-clip: text;
