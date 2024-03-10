@@ -54,6 +54,4 @@ To run it:
 ```bash
 live-server
 ```
-
-
 <br />
