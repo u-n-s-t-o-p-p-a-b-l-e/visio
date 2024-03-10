@@ -43,7 +43,7 @@ http-server -o -c-1
 <br />
 <br />
 
-For live changes, use live-server instead. It will auto refresh the browser everytime we save the file for any changes.
+For live changes, use `live-server` instead. It will auto refresh the browser everytime we save the file for any changes.
 <br />
 For installation:
 ```
@@ -51,7 +51,8 @@ npm install -g live-server
 ```
 <br />
 To run it:
-```
+```bash
 live-server
 ```
+
 <br />
