@@ -32,11 +32,26 @@ Then run it within your terminal, in your project root folder ( that contain an 
 ```bash
 http-server
 ```
-It will give the URL on localhost.
+It will give the URL on localhost.<br />
 To open the browser automatically, add `-o`. 
 <br />
-In order to clear the cache for smoother result, add `-c-1`.
+In order to clear the cache for smoother result (debugging purpose), add `-c-1`.
 
 ```
 http-server -o -c-1
 ```
+<br />
+<br />
+
+For live changes, use live-server instead. It will auto refresh the browser everytime we save the file for any changes.
+<br />
+For installation:
+```
+npm install -g live-server
+```
+<br />
+To run it:
+```
+live-server
+```
+<br />
