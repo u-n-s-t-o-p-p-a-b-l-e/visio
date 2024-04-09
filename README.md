@@ -51,7 +51,7 @@ npm install -g live-server
 ```
 <br />
 To run it:
-```bash
+```
 live-server
 ```
 
