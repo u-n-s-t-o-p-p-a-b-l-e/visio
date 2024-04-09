@@ -17,6 +17,11 @@ body {
 	background: var(--color-background);
 }
 
+h1 {
+	font-size: 25px;
+	color: var(--font-color);
+}
+
 canvas {
 	border: 1px solid red;
 }
