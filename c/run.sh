@@ -1,4 +1,4 @@
 #! /bin/bash
 
-gcc todo_app.c -lglffw -lGL -o todo
+gcc todo_app.c -lglfw -lGL -o todo
 ./todo
